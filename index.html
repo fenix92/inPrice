@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>test inPrice</title>
+		<meta http-equiv="Content-Script-Type" content="text/javascript">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<style media="screen" type="text/css">
+html,body{height:100%;}
+		</style>
+	</head>
+	<body bgcolor="white">
+		<input id="foo" value="123,45" type="text"/>
+		<input id="bar" value="-78" type="text"/>
+		<script type="text/javascript">
+ //<![CDATA[
+$(document).ready(function(){
+	var inPrice1 = $("#foo").inPrice();
+ 	var inPrice2 = $("#bar").inPrice({
+		valMin	: -100,
+		valMax	: +100
+	});
+});
+//]]>
+		</script>
+		<script type="text/javascript" src="script-inprice.js"></script>
+	</body>
+</html>
