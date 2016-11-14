@@ -1,6 +1,6 @@
 # jQuery-inPrice (= INput + pRICE)
 
-**jQuery** plugin that force an input (type text) to receive a CURRENCY value **-123,45** (example). Nothing else. Easy to use, and user-friendly. Simply fill the form with whatever, and the pluggin controls it. Don't forget to check the value on server-side ;)
+**jQuery** plugin that force an input (type text) to receive a CURRENCY value **-123,45** (example). Nothing else. Easy to use, and user-friendly. Simply fill the form with whatever, and the pluggin controls it. It's not only about authorising only the numbers, it's also about controling the selections, etc. And never forget to always double-check the value on server-side ;)
 
 online-example : http://www.clamart-natation.com/inprice/
 
