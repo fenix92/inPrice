@@ -45,9 +45,9 @@ Note few things :
 
  - you can press the minus sign ( - ) wherever is your cursor, he will be added (or removed) on the beginning of your number. If the minimum setted value allows it of course.
 
- - because of countries, the separator between the integers and the decimals may change. Sometimes it's a dot ( . ), sometimes a comma ( , ), ... This pluggin allows the user to use many differents ones. Check on the js file the "DEFAULT VALUES" :
+ - because of countries, the separator between the integers and the decimals may change. Sometimes it's a dot ( . ), sometimes a comma ( , ), ... This pluggin allows the user to use many differents ones. Check below to see how to add some :
 
-In other words, you can add any char as a separator (just can't be number or minus). On the example, we have 3 differents workins :
+In other words, you can add any char as a separator (just can't be number or minus). On the example, we have 3 differents workins (check for "DEFAULT VALUES" on the .js file):
 
     listeSeparators.push([',',44]);  // set the comma as the "official" separator
     listeSeparators.push(['.',46]);  // set the point as an optional other separator
