@@ -45,9 +45,9 @@ Note few things :
     listeSeparators.push(['.',46]);
     listeSeparators.push([' ',32]);
 
-Theses lines allows the comma, the dot and the space as separators (have to be **single** character). However, whatever the user entrer, only the first one will be displayed. The numerical value is the keyCode associated. If you want to add any separator, this link will heal you to find the keyCode ;) http://www.asquare.net/javascript/tests/KeyCode.html
+Theses lines allows the comma, the dot and the space as separators (have to be **single** character). However, whatever the user entrer, only the first one will be displayed. The numerical value is the keyCode associated. If you want to add any separator, this link will help you to find the keyCode ;) http://www.asquare.net/javascript/tests/KeyCode.html
 
-3 - The plugin is dealing with the text of the input. You can't write letters. Only numbers, thes separator(s) and the minus sign.
+3 - The plugin is dealing with the text of the input. You can't write letters. Only numbers, the separator(s) and the minus sign.
 
 
 ### Ideas of upgrade :
