@@ -40,9 +40,11 @@ Note few things :
 1 - you can press the minus sign ( - ) wherever is your cursor, he will be added (or removed) on the beginning of your number. If the minimum setted value allows it of course.
 
 2 - because of countries, the separator between the integers and the decimals may change. Sometimes it's a dot ( . ), sometimes a comma ( , ), ... This pluggin allows the user to use many differents ones. Check on the js file the "DEFAULT VALUES" :
+
     listeSeparators.push([',',44]);
-	  listeSeparators.push(['.',46]);
-	  listeSeparators.push([' ',32]);
+    listeSeparators.push(['.',46]);
+    listeSeparators.push([' ',32]);
+
 Theses lines allows the comma, the dot and the space as separators (have to be **single** character). However, whatever the user entrer, only the first one will be displayed. The numerical value is the keyCode associated. If you want to add any separator, this link will heal you to find the keyCode ;) http://www.asquare.net/javascript/tests/KeyCode.html
 
 3 - The plugin is dealing with the text of the input. You can't write letters. Only numbers, thes separator(s) and the minus sign.
