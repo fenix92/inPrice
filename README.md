@@ -43,7 +43,7 @@ once the plugin is launched, at any moment you can access to this methods :
 
 Note few things :
 
- - you can press the minus sign ( - ) wherever is your cursor, he will be added (or removed) on the beginning of your number. If the minimum setted value allows it of course.
+ - you can press the hyphen/minus sign ( - ) wherever is your cursor, he will be added (or removed) on the beginning of your number. If the minimum setted value allows it of course.
 
  - because of countries, the separator between the integers and the decimals may change. Sometimes it's a dot ( . ), sometimes a comma ( , ), ... This pluggin allows the user to use many differents ones. Check below to see how to add some :
 
