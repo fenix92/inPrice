@@ -1,11 +1,14 @@
 # jQuery-inPrice (= INput + pRICE)
 
-**jQuery** plugin that force an input (type text) to receive a CURRENCY value **-123,45** (example). Nothing else. Easy to use, and user-friendly. Simply fill the form with whatever, and the pluggin controls it. I know that we have the input of type numbers, where you can set only 2 decimals, BUT depending on 
+**jQuery** plugin that force an input (type text) to receive a CURRENCY value **-123,45** (example). Nothing else. Easy to setup, and user-friendly. Simply fill the form with whatever value, and the pluggin deals with it. I know some of you may say that I could use this instead :
 
+    <input type="number" step="0.01" /> 
 
-It's not only about authorising only the numbers, it's also about controling the selections, etc. And never forget to always double-check the value on server-side ;)
+But sadly for me, the cents separator is changing depending on internet browsers (comma vs. point), and... It was a problem for me.
+The plugin is intelligently filling the input with the values you give to him. Better than words, give a try : add letters, numbers, comma-separator, etc.
 
 online-example : http://www.clamart-natation.com/inprice/
+
 
 Please consider the following html :
 
@@ -54,6 +57,7 @@ Theses lines allows the comma, the dot and the space as separators (have to be *
 ### Ideas of upgrade :
 
  - make easier the add of separators (but ... i don't need others...).
+ - use the arrows up/down to increase/decrease the value. Easy to program, but I'm not sure it won't interfer with other things on the page...
 
 Any comments or suggestions are welcome !
 Cheers
