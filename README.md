@@ -45,6 +45,8 @@ Note few things :
 
  - you can press the hyphen/minus sign ( - ) wherever is your cursor, he will be added (or removed) on the beginning of your number. If the minimum setted value allows it of course.
 
+ - The plugin is dealing with the text of the input. You can't write letters. Only numbers, the separator(s) and the minus sign.
+
  - because of countries, the separator between the integers and the decimals may change. Sometimes it's a dot ( . ), sometimes a comma ( , ), ... This pluggin allows the user to use many differents ones. Check below to see how to add some :
 
 In other words, you can add any char as a separator (just can't be number or minus). On the example, we have 3 differents workins (check for "DEFAULT VALUES" on the .js file):
@@ -54,8 +56,6 @@ In other words, you can add any char as a separator (just can't be number or min
     listeSeparators.push([' ',32]);  // set the space as an optional other separator
 
 Theses lines allows 3 different separators. Note that they have to be a **single** character, and even if you use secondary ones, only the first will be displayed. To add a separator, you need to add an array with : the character, and his keyCode associated (this link may be useful for any add http://www.asquare.net/javascript/tests/KeyCode.html)
-
- - The plugin is dealing with the text of the input. You can't write letters. Only numbers, the separator(s) and the minus sign.
 
 
 ### Ideas of upgrade :
