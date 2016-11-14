@@ -47,9 +47,13 @@ Note few things :
 
  - because of countries, the separator between the integers and the decimals may change. Sometimes it's a dot ( . ), sometimes a comma ( , ), ... This pluggin allows the user to use many differents ones. Check on the js file the "DEFAULT VALUES" :
 
-listeSeparators.push([',',44]); listeSeparators.push(['.',46]); listeSeparators.push([' ',32]);
+In other words, you can add any char as a separator (just can't be number or minus). On the example, we have 3 differents workins :
 
-Theses lines allows the comma, the dot and the space as separators (have to be **single** character). However, whatever the user entrer, only the first one will be displayed. The numerical value is the keyCode associated. If you want to add any separator, this link will help you to find the keyCode ;) http://www.asquare.net/javascript/tests/KeyCode.html
+    listeSeparators.push([',',44]);  // set the comma as the "official" separator
+    listeSeparators.push(['.',46]);  // set the point as an optional other separator
+    listeSeparators.push([' ',32]);  // set the space as an optional other separator
+
+Theses lines allows 3 different separators. Note that they have to be a **single** character, and even if you use secondary ones, only the first will be displayed. To add a separator, you need to add an array with : the character, and his keyCode associated (this link may be useful for any add http://www.asquare.net/javascript/tests/KeyCode.html)
 
  - The plugin is dealing with the text of the input. You can't write letters. Only numbers, the separator(s) and the minus sign.
 
