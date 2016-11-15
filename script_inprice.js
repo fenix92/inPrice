@@ -359,6 +359,10 @@
 								for(var i=0; i<selPosIn; i++){
 									currentValueTemp = currentValueTemp+l[i];
 								}
+								// if the separator is not displayed yet, we have to increment sl
+								if($('.'+iname).val().indexOf(separator[0][0]) == -1){
+									sl+=1;
+								}
 								var sl = ((currentValueTemp=='')?1:selPosOut)+addonCur+1;
 								currentValueTemp = ((currentValueTemp=='')?'0':currentValueTemp)+separator[0][0]+'00';
 								IP_setValue(currentValueTemp);
