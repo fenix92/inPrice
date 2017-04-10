@@ -9,7 +9,8 @@
 
 			var inprice = $("#foo").inPrice({
 				valMin	: 0,
-				valMax	: 999
+				valMax	: 999,
+				step    : 1
 			});
 			-or-
 			var inprice = $("#foo").inPrice();
@@ -25,7 +26,7 @@
 		CREDIT -
 			Sebastien Pipet (https://www.facebook.com/sebastien.pipet)
 		VERSION -
-			0.1
+			0.2
 		DOWNLOAD -
 			https://github.com/fenix92/inprice
 		DISCLAIMER -
@@ -36,9 +37,10 @@
 
 	/* ========================================= DEFAULT VALUES ============================================ */
 
-	var	maxPrice = 999;				// maximal authorised price
+	var	maxPrice = 100000;	        	// maximal authorised price
 	var	minPrice = 0;				// minimal authorised price
 	var	listeSeparators = [];			// list of the separators.
+	var	stepVal = 1;	                	// step used to increase/decrease the value with the arrow up/down
 	// below are the authorised separators : the char + the keyCode associated. CAN'T BE MINUS " - ". Note also that order matter : only the firt one will be displayed.
 	listeSeparators.push([',',44]);
 	listeSeparators.push(['.',46]);
@@ -68,6 +70,7 @@
 		params = $.extend({
 			valMax	: maxPrice,
 			valMin	: minPrice,
+                        step    : stepVal,
                         separator : listeSeparators
 		}, params);
 
@@ -75,6 +78,7 @@
 			focusOnRight	 = false,
 			valMaximal	 = params.valMax,
 			valMinimal	 = params.valMin,
+			valStep 	 = parseInt(params.step,10),
 			separator	 = params.separator,
 			currentValue	 = '0'+separator[0][0]+"00",	// default value
 			isNegatif	 = false,
@@ -220,6 +224,10 @@
 		inPrice.focus(function() {
 			if(!inputHasFocus){
 				inputHasFocus = true;
+                                // if value is 0,00 (default value) ; we automatically select all on focus
+				if(inPrice.val()=="0"+separator[0][0]+"00"){
+					inPrice.select();
+				}
 			}
 		});
 		// equivalent ot the jQuery .val() function
@@ -243,9 +251,7 @@
 			||	charCode==13	/* enter	*/
 			||	charCode==16	/* shift	*/
 			||	charCode==37	/* arrow left	*/
-			||	charCode==38	/* arrow up	*/
 			||	charCode==39	/* arrow right	*/
-			||	charCode==40	/* arrow down	*/
 			||	charCode==27	/* esc		*/ ){
 				// all the keys listed up has normal comportement
 				return true;
@@ -262,7 +268,7 @@
 					r	= IP_getValue(false),
 					currentValueTemp ='';
 				currentValue	= IP_checkValue();
-				// console.log('l ('+l+') r ('+r+') ; in ('+selPosIn+') out ('+selPosOut+')');
+                                // console.log('l ('+l+') r ('+r+') ; in ('+selPosIn+') out ('+selPosOut+')');
 
 				// ========== AUTHORIZED CHARS : numbers ========== 
 				if(	(charCode >= 48 && charCode <= 57)	){	// numbers.
@@ -349,6 +355,10 @@
 					isNegatif=!isNegatif;
 					IP_setValue(currentValue);
 					return false;
+				// ========== AUTHORIZED CHARS : arrow up / arro down ========== 
+				}else if(charCode == 38 || charCode == 40){
+					// we increment or decrease the number
+                                       IP_setValue(((charCode==38)?(parseInt(l,10)+valStep):(parseInt(l,10)-valStep))+separator[0][0]+r);
 				// ========== AUTHORIZED CHARS : separator char(s) ========== 
 				}else{
 					for(var i=0; i<separator.length; i++){
@@ -359,10 +369,6 @@
 								for(var i=0; i<selPosIn; i++){
 									currentValueTemp = currentValueTemp+l[i];
 								}
-								// if the separator is not displayed yet, we have to increment sl
-								if($('.'+iname).val().indexOf(separator[0][0]) == -1){
-									sl+=1;
-								}
 								var sl = ((currentValueTemp=='')?1:selPosOut)+addonCur+1;
 								currentValueTemp = ((currentValueTemp=='')?'0':currentValueTemp)+separator[0][0]+'00';
 								IP_setValue(currentValueTemp);
@@ -372,8 +378,8 @@
 								// is there a separator displayed in the input or not yet ?
 								if($('.'+iname).val().indexOf(separator[0][0]) == -1){
 									// nothing yet, we accept to add one
-									var sl = ((currentValueTemp=='')?1:l.length)+addonCur+1;
 									currentValueTemp = l+separator[0][0]+'00';
+									var sl = ((currentValueTemp=='')?1:l.length)+addonCur+1;
 									IP_setValue(currentValueTemp);
 									input[0].setSelectionRange(sl,sl+2);
 									return false;
