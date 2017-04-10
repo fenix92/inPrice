@@ -22,13 +22,15 @@ To force theses inputs to receive a "price" value, just insert :
         // or (with all options)
         var inprice2 = $("#foo").inprice({
                 valMin	: 0,
-                valMax	: 200
+                valMax	: 200,
+                step    : 1
         });
     </script>
 for a quick explaination,
 
     valMin     : the minimal value the user can give. Can be negative value
     valMax     : the maximal value the user can give. Can be negative value
+    step       : if you use arrow up/down, you can add/remove 'step' from the current value
 
 once the plugin is launched, at any moment you can access to this methods :
 
