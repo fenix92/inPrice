@@ -63,7 +63,7 @@ Theses lines allows 3 different separators. Note that they have to be a **single
 ### Ideas of upgrade :
 
  - make easier the add of separators (but ... i don't need others...).
- - use the arrows up/down to increase/decrease the value. Easy to program, but I'm not sure it won't interfer with other things on the page...
+ - ...?
 
 Any comments or suggestions are welcome !
 Cheers
